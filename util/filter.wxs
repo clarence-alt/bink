@@ -1,0 +1,26 @@
+var format = function(text){
+    if(!text){
+        return
+    }
+    var reg = getRegExp('\\\\n','g')
+    return text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;')
+}
+
+var limit = function(array, length){
+    return array.slice(0, length)
+}
+var highlight = function (index) {
+  if (index == 0) {
+    return 'ex-tag1'
+  }
+  if (index == 1) {
+    return 'ex-tag2'
+  }
+  return ''
+}
+
+module.exports = {
+    format:format,
+    limit:limit,
+    highlight: highlight
+}
